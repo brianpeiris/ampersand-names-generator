@@ -1,0 +1,9 @@
+{
+	"private": true,
+	"scripts": {
+		"start": "browser-sync start -s -w --no-open --no-notify --no-ghost-mode"
+	},
+	"devDependencies": {
+		"browser-sync": "^3.0.4"
+	}
+}

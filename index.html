@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        font-family: sans-serif;
+        background: #333;
+        color: white;
+      }
+      main {
+        display: grid;
+        gap: 20px;
+        grid-template: 350px auto / 170px 650px;
+        padding-top: 20px;
+      }
+      #inputs {
+        display: grid;
+        justify-items: start;
+        align-content: start;
+        grid-row: span 2;
+      }
+      label:not(:has(input)) {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+      textarea {
+        height: 100px;
+      }
+      a:not([href]) {
+        color: darkgrey;
+      }
+      a {
+        color: white;
+        display: block;
+      }
+      button {
+        font-weight: bold;
+        font-size: 14px;
+        background: #444;
+        border: 1px solid #000;
+        color: white;
+        padding: 10px;
+      }
+      svg {
+        background: #777;
+      }
+    </style>
+    <script src="fonts.js" defer></script>
+    <script src="svg-to-png.js" defer></script>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div id="inputs">
+        <label>Names:</label>
+        <textarea id="input">
+          Hao
+          Marcus
+          Bender
+          Hanna
+          Zitron
+        </textarea>
+
+        <label>Font:</label>
+        <label><input id="fontInter" type="radio" name="font" value="Inter" checked />Inter</label>
+        <label><input id="fontUbuntu" type="radio" name="font" value="Ubuntu Sans" />Ubuntu Sans</label>
+
+        <label>Color:</label>
+        <label><input id="colorBlack" type="radio" name="color" value="Black" checked />Black</label>
+        <label><input id="colorWhite" type="radio" name="color" value="White" />White</label>
+
+        <label>Line Height:</label>
+        <input id="lineHeightEl" type="range" min="0.5" max="1" step="0.05" value="0.8" />
+      </div>
+
+      <svg id="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <style id="svgStyle"></style>
+        <text id="text"></text>
+      </svg>
+
+      <div>
+        <button id="generate">Generate Image</button>
+        <a id="downloadPng">Download PNG</a>
+      </div>
+    </main>
+  </body>
+</html>
