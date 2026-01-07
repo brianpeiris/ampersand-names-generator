@@ -10,14 +10,14 @@
         flex-direction: column;
         align-items: center;
         font-family: sans-serif;
-        background: #333;
+        background: #222;
         color: white;
         padding-bottom: 20px;
       }
       main {
         display: grid;
         gap: 20px;
-        grid-template: 350px auto / 170px 500px;
+        grid-template: auto auto / 170px 500px;
         padding-top: 20px;
       }
       #inputs {
@@ -51,15 +51,31 @@
       }
       svg {
         background: #777;
+        max-width: 500px;
+      }
+      #textColor {
+        margin-top: 10px;
+      }
+      #textMeasure {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
       }
       @media (max-width: 600px) {
+        body {
+          align-items: start;
+        }
         main {
           display: flex;
           flex-direction: column;
+          max-width: 95vw;
         }
         h1 {
           font-size: 20px;
           margin: 0;
+        }
+        svg {
+          max-width: 95vw;
         }
       }
     </style>
@@ -84,9 +100,7 @@
         <label><input id="fontInter" type="radio" name="font" value="Inter" checked />Inter</label>
         <label><input id="fontUbuntu" type="radio" name="font" value="Ubuntu Sans" />Ubuntu Sans</label>
 
-        <label>Color:</label>
-        <label><input id="colorBlack" type="radio" name="color" value="Black" checked />Black</label>
-        <label><input id="colorWhite" type="radio" name="color" value="White" />White</label>
+        <label>Color: <input id="textColor" type="color" /></label>
 
         <label>Line Height:</label>
         <input id="lineHeightEl" type="range" min="0.5" max="1" step="0.05" value="0.8" />
@@ -102,5 +116,9 @@
         <a id="downloadPng">Download PNG</a>
       </div>
     </main>
+    <svg id="textMeasure" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+      <style id="textMeasureStyle"></style>
+      <text><tspan id="textMeasureText"></tspan></text>
+    </svg>
   </body>
 </html>
