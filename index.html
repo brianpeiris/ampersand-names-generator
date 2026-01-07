@@ -1,18 +1,23 @@
 <!doctype html>
 <html>
   <head>
+    <title>Ampersand Names Generator</title>
+    <meta name="description" content="Image generator for ampersand-style names t-shirts" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
       body {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
         font-family: sans-serif;
         background: #333;
         color: white;
+        padding-bottom: 20px;
       }
       main {
         display: grid;
         gap: 20px;
-        grid-template: 350px auto / 170px 650px;
+        grid-template: 350px auto / 170px 500px;
         padding-top: 20px;
       }
       #inputs {
@@ -42,9 +47,20 @@
         border: 1px solid #000;
         color: white;
         padding: 10px;
+        margin-bottom: 10px;
       }
       svg {
         background: #777;
+      }
+      @media (max-width: 600px) {
+        main {
+          display: flex;
+          flex-direction: column;
+        }
+        h1 {
+          font-size: 20px;
+          margin: 0;
+        }
       }
     </style>
     <script src="fonts.js" defer></script>
@@ -52,6 +68,7 @@
     <script src="index.js" defer></script>
   </head>
   <body>
+    <h1>Ampersand Names Generator</h1>
     <main>
       <div id="inputs">
         <label>Names:</label>
